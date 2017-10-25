@@ -1,0 +1,69 @@
+import java.util.*;
+
+public class Test
+{
+    public static void main(String[] args) {
+
+        int maxVal = Integer.MAX_VALUE;
+        int minVal = Integer.MIN_VALUE;
+
+        int[] list = new int[4];
+        list[0] =152 ;
+        list[1] = 5;
+        list[2] = 596;
+        list[3] = 63;
+        int[] ta= { 3, 5, 7, 8, 12};
+        int[] tb={10,100,1000,1010,1100};
+        int [] tab = new int [11] ;
+
+        Arrays.sort(list);    //trier les elements
+
+        for(int i = 0; i < list.length; i++) {
+            System.out.println(list[i]);            //afficher tableau trier
+        }
+
+        for(int i = 0; i < list.length; i++){    //Donner le Min et le Max du tableau dans une boucle for
+            if(list[i] < maxVal)
+                maxVal = list[i];
+            if(list[i] > minVal)
+                minVal = list[i];
+        }
+
+        System.out.print("\nValeur minimale = "+maxVal);
+        System.out.print("\nValeur maximale = "+minVal);
+
+       if( ta.length != tb.length ) {
+            System.out.println("\n Impossible de sommer les tableau car ils sont de taille diff  "); }
+       else {
+           int j = 0;
+           for (  j = 0; j < ta.length; ++j)
+           {
+               tab[j] = ta[j] + tb[j];
+               System.out.println(tab[j]); }
+        }
+
+        int [] t= { 3, 5, 7, 8, 12,124};
+
+
+
+
+        for( int i=0;  i< t.length  ; i++) {
+          int [] tinv = new int [t.length];
+            tinv [i]=t[t.length-1-i];
+            System.out.println(tinv[i]);
+
+        }
+
+        for( int i=0;  i< t.length  ; i++) {
+          int x =5;
+          t[i]= t[i]*x;
+          System.out.println(t[i]);
+        }
+
+
+
+
+    }
+
+}
+
