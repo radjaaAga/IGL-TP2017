@@ -1,0 +1,93 @@
+
+package javaapplication2;
+
+import java.util.Arrays;
+
+public class class1 {
+    
+
+    /************* min max************************/
+    
+    public void  maxmintab(int [] tab,int ma,int mi)
+    {
+
+    int i;
+ 
+     int minVal=Integer.MIN_VALUE;
+
+     int maxVal=Integer.MIN_VALUE;
+        for(  i = 0; i < tab.length; i++)
+        {  
+            if(tab[i] < maxVal)
+            { maxVal = tab[i];}
+            if(tab[i] > minVal)
+            {minVal = tab[i];}
+        }
+
+        System.out.print("\nValeur minimale = "+maxVal);
+        System.out.println("\nValeur maximale = "+minVal);
+         ma =maxVal;
+         mi =minVal;
+        
+    }
+
+/************** trier ****************************************************/
+    public void trier(int [] tab )
+    {
+        Arrays.sort(tab);    //trier les elements
+
+        int i;
+        for( i = 0; i < tab.length; i++) {
+            System.out.println(tab[i]);            //afficher tableau trier
+        }   
+    }
+
+/************** sommer deux tableau ******************************************/
+    public void sommetab(int [] ta ,int [] tb,int [] tab)
+    {
+          if( ta.length != tb.length ) 
+        {
+            System.out.println("\n Impossible de sommer les tableau car ils sont de taille diff  ");
+        }
+       else 
+        {
+
+           int j;
+           for ( j = 0; j < ta.length; ++j)
+            {
+               tab[j] = ta[j] + tb[j];
+               System.out.println(tab[j]); 
+            }
+        }
+    }
+ 
+/********************** inverser un tableau ****************************/
+    public void invers(int [] t) 
+    {
+
+    int i;
+
+    int [] tinv = new int [t.length];
+        for(i=0;  i< t.length  ; i++)
+        {
+
+            tinv [i]=t[t.length-1-i];
+            System.out.println(tinv[i]);
+        }
+        
+    }
+
+    /*************** multiplier les elements du tableau par 5*************/ 
+
+    public void add(int [] t)
+    {
+
+         int i;
+         for( i=0;  i< t.length  ; i++) 
+        {
+          t[i]= t[i]*5;
+          System.out.println(t[i]);
+        }
+    }
+    
+}
