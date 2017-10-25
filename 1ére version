@@ -1,4 +1,4 @@
-import java.util.*;
+ import java.util.*;
 
 public class Test
 {
@@ -10,7 +10,7 @@ public class Test
         int[] list = new int[4];
         list[0] =152 ;
         list[1] = 5;
-        list[2] = 596;
+        list[2] = 100;
         list[3] = 63;
         int[] ta= { 3, 5, 7, 8, 12};
         int[] tb={10,100,1000,1010,1100};
@@ -22,11 +22,11 @@ public class Test
             System.out.println(list[i]);            //afficher tableau trier
         }
 
-        for(int i = 0; i < list.length; i++){    //Donner le Min et le Max du tableau dans une boucle for
-            if(list[i] < maxVal)
-                maxVal = list[i];
-            if(list[i] > minVal)
-                minVal = list[i];
+        for(int j = 0; j < list.length; j++){    //Donner le Min et le Max du tableau dans une boucle for
+            if(list[j] < maxVal)
+                maxVal = list[j];
+            if(list[j] > minVal)
+                minVal = list[j];
         }
 
         System.out.print("\nValeur minimale = "+maxVal);
