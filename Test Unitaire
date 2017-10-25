@@ -1,0 +1,66 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javaapplication2.ExceptionTailleDifferente;
+import javaapplication2.VectorHelper;
+import org.junit.Assert;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author Raouf
+ */
+
+public class Testsunit {
+    
+  VectorHelper a=new VectorHelper();    
+    @Test
+    public void  Testmax() 
+    {
+
+     int [] tab ={1,5,7,9,45,62,94,86,84};
+     int max=0,min=0 ;
+     int[] result = a.maxmintab(tab); 
+     assertEquals(1,result[1]);
+     assertEquals(94,result[0]);
+    }
+    @Test
+    public void testTri()
+    {
+      int [] tab1 ={1,62,7,9,54,45,94,86,84}; 
+      a.trier(tab1);
+      int [] tab2={1,7,9,45,54,62,84,86,94};
+      Assert.assertArrayEquals(tab1,tab2);
+    }       
+    @Test
+    public void testSom()
+    {
+      int [] tab3={1,7,9,45,54,62,84,86,94};
+      int [] tab4={9,3,1,55,46,38,16,14,6};
+      int [] tab5=new int[9];
+      int [] tab6={10,10,10,100,100,100,100,100,100};
+      try {
+          a.sommetab(tab3, tab4, tab5);
+      } catch (ExceptionTailleDifferente ex) {
+          Logger.getLogger(Testsunit.class.getName()).log(Level.SEVERE, null, ex);
+      }
+       Assert.assertArrayEquals(tab5,tab6);
+    }
+    @Test
+    public void testInvrs()
+    {
+     int [] tab7={1,7,9,45,54,62,84,86,94};
+     int [] tab8={94,86,84,62,54,45,9,7,1};
+      int [] tab9 = a.invers(tab8);
+      Assert.assertArrayEquals(tab7,tab9);
+    }
+    @Test
+    public void testAdd()
+    {
+     int [] tab10={1,2,3,4,5,6,7,8,9};
+     int [] tab11=a.add(tab10);
+     int [] tab12={5,10,15,20,25,30,35,40,45};
+     Assert.assertArrayEquals(tab12,tab11);
+    }
+}
