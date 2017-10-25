@@ -1,0 +1,133 @@
+
+package javaapplication2;
+
+/**
+ * le package imprter necessaire
+ */
+import java.util.*;
+
+/**
+ * La class  VecteurHelper contient tout les methodes utilisable
+ * 
+ */
+public class VectorHelper 
+{    
+    /**
+     * Cet methode va rechercher le min et le max du tableau donné en entré
+     * @param tab Le tableau donne en en entrer
+     * @return  retourner un tableau contient les valeurs max et mins.
+     */
+    
+    public int[]  maxmintab(int [] tab )
+    {
+    /**
+ 
+     * @param i      un entier pour generer la boucle POUR
+    */
+    int i;
+     /**
+      * @param minVal un entier qui va contenir le minimum du tableau
+    */
+     int minVal = tab[0];
+     /**
+     * @param maxVal un entier qui va contenir le maximum du tableau 
+     */
+     int maxVal= tab[0];
+        for(  i = 0; i < tab.length; i++)
+        {  
+            if(tab[i] > maxVal)
+            { maxVal = tab[i];}
+            if(tab[i] < minVal)
+            {minVal = tab[i];}
+        }
+
+        int t [] = new int[20];
+         t[0] = maxVal;
+         t[1] = minVal;
+         
+         return t ;
+        
+    }
+
+    /**
+     * Cette methode va trier le tableau donné en entrer
+     * @param tab Le tableau qu'on va trier 
+     */
+    public void trier(int [] tab )
+    {
+        Arrays.sort(tab);    //trier les elements
+
+    }
+
+    /**
+     * Cette methode va sommer deux tableau
+     * @param ta (entrer) premier tableau pour sommé 
+     * @param tb (entrer) deuxiemme tableau pour sommé 
+     * @param tab(sortie) tableau qui va contient la somme des deux tableau
+     * @throws javaapplication2.ExceptionTailleDifferente une exception si la taille est defferant.
+     */
+    public void sommetab(int [] ta ,int [] tb,int [] tab) throws ExceptionTailleDifferente
+    {
+          if( ta.length != tb.length ) {
+              throw new ExceptionTailleDifferente();
+          } 
+       
+       else 
+        {
+           /**
+            * @param j entier pour generer la boucle POUR
+            */ 
+           int j;
+           for ( j = 0; j < ta.length; ++j)
+            {
+               tab[j] = ta[j] + tb[j];
+               System.out.println(tab[j]); 
+            }
+        }
+    }
+
+    /**
+     * Cette methode va inverser un tableau donné en entrer
+     * @param t(entrer | sortie) un tableau qui va etre inverser 
+     * @return retourner un nouveau tableau trier.
+     */
+    public int [] invers(int [] t) 
+    {
+    /**
+     * @param i entier pour generer la boucle POUR
+     */
+    int i;
+    /**
+     * @param tinv un tableau qui va contient le nouveau tableau
+     */
+    int [] tinv = new int [t.length];
+        for(i=0;  i< t.length  ; i++)
+        {
+
+            tinv [i]=t[t.length-1-i];
+        }  
+        return tinv;
+    }
+
+    /**
+     * Cette methode va ajoutter 5 a tous les elements du tableux
+     * @param t (entrer | sortie) un tbleau qu'on va mutiplier ses element par 5
+     * @return  retourner un nouveau tableau contient les resultats de multiplication 
+     */
+    public int [] add(int [] t)
+    {
+    /**
+     * @param i un entier pour generer la boucle POUR
+     */
+         int i;
+         int ta []=new int[t.length];
+         for( i=0;  i< t.length  ; i++) 
+        {
+          ta[i]= t[i]*5;
+        }
+         return ta;
+    }
+
+
+} 
+
